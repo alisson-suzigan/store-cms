@@ -4,16 +4,12 @@
  *
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
-
 import React, { ReactNode } from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
-
 import CssBaseline from '@material-ui/core/CssBaseline';
 import { ThemeProvider } from '@material-ui/core/styles';
-
 import Header from '../header';
 import theme from '../../theme';
-// import './layout.css';
 
 interface Props {
   children: ReactNode;
@@ -32,7 +28,6 @@ const Layout = ({ children }: Props): JSX.Element => {
 
   return (
     <ThemeProvider theme={theme}>
-      {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
       <CssBaseline />
       <Header siteTitle={data.site.siteMetadata.title} />
 
