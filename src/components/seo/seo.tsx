@@ -13,10 +13,9 @@ interface Props {
   title: string;
   description?: string;
   lang?: string;
-  meta?: Record<string, string>[];
 }
 
-function SEO({ title, description = '', lang = 'en', meta = [] }: Props): JSX.Element {
+function SEO({ title, description = '', lang = 'pt-br' }: Props): JSX.Element {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -73,7 +72,7 @@ function SEO({ title, description = '', lang = 'en', meta = [] }: Props): JSX.El
           name: `twitter:description`,
           content: metaDescription,
         },
-      ].concat(meta)}
+      ]}
     />
   );
 }
