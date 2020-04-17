@@ -1,37 +1,31 @@
-import { Link } from 'gatsby';
 import React from 'react';
+import { Link } from 'gatsby';
+import styled from 'styled-components';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
+import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket';
+import theme from '../../theme';
 
 interface Props {
   siteTitle: string;
 }
 
 const Header = ({ siteTitle }: Props): JSX.Element => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
-    </div>
-  </header>
+  <AppBar position="static">
+    <Toolbar>
+      <ShoppingBasketIcon spacing="20px" />
+      <Typography component="h1" variant="h5">
+        <StyledLink to="/">{siteTitle}</StyledLink>
+      </Typography>
+    </Toolbar>
+  </AppBar>
 );
+
+const StyledLink = styled(Link)`
+  margin: 0 ${theme.spacing()}px;
+  color: inherit;
+  text-decoration: none;
+`;
 
 export default Header;
