@@ -6,6 +6,7 @@
  */
 import React, { ReactNode } from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
+import styled from 'styled-components';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import { ThemeProvider } from '@material-ui/core/styles';
 import theme from '../../theme';
@@ -31,10 +32,13 @@ const Layout = ({ children }: Props): JSX.Element => {
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <Header siteTitle={data.site.siteMetadata.title} />
-      <main>{children}</main>
+      <StyledMain>{children}</StyledMain>
       <Footer />
     </ThemeProvider>
   );
 };
 
+const StyledMain = styled.main`
+  margin: ${theme.spacing(4)}px 0;
+`;
 export default Layout;
