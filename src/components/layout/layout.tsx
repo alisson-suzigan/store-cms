@@ -6,10 +6,12 @@
  */
 import React, { ReactNode } from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
+import styled from 'styled-components';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import { ThemeProvider } from '@material-ui/core/styles';
-import Header from '../header';
 import theme from '../../theme';
+import Header from '../header';
+import Footer from '../footer';
 
 interface Props {
   children: ReactNode;
@@ -30,16 +32,13 @@ const Layout = ({ children }: Props): JSX.Element => {
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <Header siteTitle={data.site.siteMetadata.title} />
-
-      <main>{children}</main>
-
-      <footer>
-        © {new Date().getFullYear()}, Built with
-        {` `}
-        <a href="https://www.gatsbyjs.org">Gatsby</a>
-      </footer>
+      <StyledMain>{children}</StyledMain>
+      <Footer />
     </ThemeProvider>
   );
 };
 
+const StyledMain = styled.main`
+  margin: ${theme.spacing(4)}px 0;
+`;
 export default Layout;

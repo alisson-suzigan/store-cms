@@ -23,6 +23,9 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "dependencies": {
+    "@material-ui/core": "^4.9.10",
+    "@material-ui/icons": "^4.9.1",
+    "@material-ui/styles": "^4.9.10",
     "gatsby": "^2.20.12",
     "gatsby-image": "^2.3.1",
     "gatsby-plugin-manifest": "^2.3.3",
@@ -41,8 +44,6 @@
     "styled-components": "^5.1.0"
   },
   "devDependencies": {
-    "@material-ui/core": "^4.9.10",
-    "@material-ui/styles": "^4.9.10",
     "@types/react-helmet": "^5.0.15",
     "@types/styled-components": "^5.1.0",
     "@typescript-eslint/eslint-plugin": "^2.27.0",
