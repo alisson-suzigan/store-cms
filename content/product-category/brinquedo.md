@@ -1,4 +1,4 @@
 ---
 title: Roupa infantil
-icon: ""
+icon: cloat
 ---
