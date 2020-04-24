@@ -1,3 +1,4 @@
 ---
 title: Brinquedos
+icon: toys
 ---
