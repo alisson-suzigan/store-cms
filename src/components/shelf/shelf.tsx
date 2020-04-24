@@ -4,8 +4,9 @@ import Typography from '@material-ui/core/Typography';
 import StarIcon from '@material-ui/icons/Star';
 import ShelfList from './shelf-list';
 import theme from '../../theme';
+import { ProductMarkdownRemark } from './type';
 
-const Shelf = (): JSX.Element => {
+const Shelf = ({ data }: ProductMarkdownRemark): JSX.Element => {
   return (
     <StyledSection>
       <StyledTitle variant="h2">
@@ -14,7 +15,7 @@ const Shelf = (): JSX.Element => {
           Section name
         </Typography>
       </StyledTitle>
-      <ShelfList />
+      <ShelfList data={data} />
     </StyledSection>
   );
 };

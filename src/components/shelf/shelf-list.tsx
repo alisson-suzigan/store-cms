@@ -1,14 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
 import ShelfItem from './shelf-item';
+import { ProductMarkdownRemark } from './type';
 
-const ShelfList = (): JSX.Element => {
-  const list = [1, 2, 3, 4, 5, 6, 7, 8];
+const ShelfList = ({ data }: ProductMarkdownRemark): JSX.Element => {
+  const { nodes } = data.allMarkdownRemark;
 
   return (
     <StyledShelfList>
-      {list.map((_, idx) => (
-        <ShelfItem key={idx} />
+      {nodes.map(({ frontmatter }, idx) => (
+        <ShelfItem key={idx} data={frontmatter} />
       ))}
     </StyledShelfList>
   );

@@ -1,19 +1,33 @@
 import React from 'react';
-import { Link } from 'gatsby';
-import Button from '@material-ui/core/Button';
+import { Link, graphql } from 'gatsby';
 import SEO from '../components/seo';
+import Shelf from '../components/shelf/shelf';
+import { ProductMarkdownRemark } from '../components/shelf/type';
 
-const IndexPage = (): JSX.Element => (
-  <>
-    <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <Button variant="contained" color="primary">
-      test
-    </Button>
-    <Link to="/page-2/">Go to page 2</Link>
-  </>
-);
+const IndexPage = ({ data }: ProductMarkdownRemark): JSX.Element => {
+  return (
+    <>
+      <SEO title="Home" />
+      <Shelf data={data} />
+      <Link to="/page-2/">Go to page 2</Link>
+    </>
+  );
+};
+
+export const query = graphql`
+  {
+    allMarkdownRemark {
+      totalCount
+      nodes {
+        frontmatter {
+          title
+          layout
+          image
+          value
+        }
+      }
+    }
+  }
+`;
 
 export default IndexPage;

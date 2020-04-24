@@ -5,20 +5,32 @@ import CardActionArea from '@material-ui/core/CardActionArea';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
+import { Product } from './type';
 import theme from '../../theme';
 
-const ShelfItem = (): JSX.Element => {
+interface Props {
+  data: Product;
+}
+
+const ShelfItem = ({ data }: Props): JSX.Element => {
+  const { title, value, image } = data;
+
+  const convertValueToCurrency = (value: number): string => {
+    const [ints, cents = ''] = value.toString().split('.');
+    return `R$ ${ints},${cents.padEnd(2, '0')}`;
+  };
+
   return (
     <li>
       <StyledCard>
         <CardActionArea>
-          <StyledCardMedia image="https://i.picsum.photos/id/95/400/400.jpg" title="Contemplative Reptile" />
+          <StyledCardMedia image={image} title={title} />
           <StyledCardContent>
             <Typography component="h3" variant="h6">
-              Lizard
+              {title}
             </Typography>
             <Typography component="strong" variant="h6">
-              R$ 35,20
+              {value && convertValueToCurrency(value)}
             </Typography>
           </StyledCardContent>
         </CardActionArea>
