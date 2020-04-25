@@ -6,5 +6,5 @@ image: /images/uploads/bg-fake.jpg
 valeu: 45.5
 value: 37
 categories:
-  - category: Roupas
+  - category: Brinquedos
 ---
