@@ -1,4 +1,4 @@
 ---
 title: "Roupa adulto "
-icon: cloat
+icon: cloats
 ---
