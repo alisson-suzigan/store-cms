@@ -5,11 +5,11 @@ import CardActionArea from '@material-ui/core/CardActionArea';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
-import { Product } from './type';
+import { ShelfProduct } from './type';
 import theme from '../../theme';
 
 interface Props {
-  data: Product;
+  data: ShelfProduct;
 }
 
 const ShelfItem = ({ data }: Props): JSX.Element => {
@@ -23,14 +23,14 @@ const ShelfItem = ({ data }: Props): JSX.Element => {
   return (
     <li>
       <StyledCard>
-        <CardActionArea>
+        <CardActionArea title={`${title}`}>
           <StyledCardMedia image={image} title={title} />
           <StyledCardContent>
             <Typography component="h3" variant="h6">
               {title}
             </Typography>
             <Typography component="strong" variant="h6">
-              {value && convertValueToCurrency(value)}
+              {value ? convertValueToCurrency(value) : 'Indefinido *'}
             </Typography>
           </StyledCardContent>
         </CardActionArea>
