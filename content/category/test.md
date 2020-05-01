@@ -1,5 +1,5 @@
 ---
-layout: product-category
+layout: category
 title: test
 icon: test
 ---
