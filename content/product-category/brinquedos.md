@@ -1,4 +1,0 @@
----
-title: Brinquedos
-icon: toy
----

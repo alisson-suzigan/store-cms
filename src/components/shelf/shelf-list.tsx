@@ -1,18 +1,19 @@
 import React from 'react';
 import styled from 'styled-components';
 import ShelfItem from './shelf-item';
+import { ShelfProduct } from './type';
 
-const ShelfList = (): JSX.Element => {
-  const list = [1, 2, 3, 4, 5, 6, 7, 8];
+interface Props {
+  data: ShelfProduct[];
+}
 
-  return (
-    <StyledShelfList>
-      {list.map((_, idx) => (
-        <ShelfItem key={idx} />
-      ))}
-    </StyledShelfList>
-  );
-};
+const ShelfList = ({ data }: Props): JSX.Element => (
+  <StyledShelfList>
+    {data.map(item => (
+      <ShelfItem key={item.id} data={item} />
+    ))}
+  </StyledShelfList>
+);
 
 const StyledShelfList = styled.ul`
   display: flex;

@@ -1,24 +1,59 @@
 backend:
-  name: git-gateway
+  # name: git-gateway
+  name: github
+  repo: alisson-suzigan/store-cms
   branch: master # Branch to update (optional; defaults to master)
 
+site_url: https://storecms.netlify.app
+display_url: https://storecms.netlify.app
+# logo_url: https://your-site.com/images/logo.svg
+locale: 'pt-br'
+# show_preview_links: true
+# slug:
+#   encoding: "ascii"
+#   clean_accents: true
+#   sanitize_replacement: "-"
+
 # Enabling Editorial Workflow: interface for drafting, reviewing, and approving posts
-publish_mode: editorial_workflow
+# publish_mode: editorial_workflow
 
 # Media files will be stored in the repo under images/uploads
 media_folder: 'static/images/uploads' # Media files will be stored in the repo under static/images/uploads
 public_folder: '/images/uploads' # The src attribute for uploaded media will begin with /images/uploads
 
 collections:
-  - name: 'blog' # Used in routes, e.g., /admin/collections/blog
-    label: 'Blog' # Used in the UI
-    folder: '_posts/blog' # The path to the folder where the documents are stored
+  - name: 'product' # Used in routes, e.g., /admin/collections/product
+    label: 'Produto' # Used in the UI
+    folder: 'content/product' # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
-    slug: '{{year}}-{{month}}-{{day}}-{{slug}}' # Filename template, e.g., YYYY-MM-DD-title.md
+    slug: '{{slug}}' # Filename template, e.g., title.md
     fields: # The fields for each document, usually in front matter
-      - { label: 'Layout', name: 'layout', widget: 'hidden', default: 'blog' }
+      - { label: 'Layout', name: 'layout', widget: 'hidden', default: 'product' }
+      - { label: 'Nome', name: 'title', widget: 'string' }
+      - { label: 'Imagem', name: 'image', widget: 'image' }
+      - { label: 'Valor', name: 'value', widget: 'number', valueType: 'float' }
+      - { label: 'Disponível', name: 'available', widget: 'boolean', required: false, default: true }
+      - { label: 'Publicação', name: 'date', widget: 'datetime' }
+      - label: 'Categorias'
+        name: 'categories'
+        widget: 'list'
+        required: true
+        fields:
+          - label: 'Categoria'
+            name: 'category'
+            widget: 'relation'
+            collection: 'category'
+            searchFields: ['title']
+            valueField: 'title'
+
+  - name: 'category'
+    label: 'Categoria'
+    # editor:
+    #   preview: false
+    folder: 'content/category'
+    slug: '{{slug}}'
+    create: true # Allow users to create new documents in this collection
+    fields: # The fields each document in this collection have
+      - { label: 'Layout', name: 'layout', widget: 'hidden', default: 'category' }
       - { label: 'Title', name: 'title', widget: 'string' }
-      - { label: 'Publish Date', name: 'date', widget: 'datetime' }
-      - { label: 'Featured Image', name: 'thumbnail', widget: 'image' }
-      - { label: 'Rating (scale of 1-5)', name: 'rating', widget: 'number' }
-      - { label: 'Body', name: 'body', widget: 'markdown' }
+      - { label: 'Icone', name: 'icon', widget: 'string', required: false }
