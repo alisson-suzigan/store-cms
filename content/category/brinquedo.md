@@ -1,5 +1,5 @@
 ---
 layout: category
 title: Roupa infantil
-icon: baby
+icon: ChildFriendly
 ---
