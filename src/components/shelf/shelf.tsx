@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Typography from '@material-ui/core/Typography';
-import StarIcon from '@material-ui/icons/Star';
+import Icon from '@material-ui/core/Icon';
 import ShelfList from './shelf-list';
 import theme from '../../theme';
 import { ShelfData } from './type';
@@ -13,7 +13,7 @@ interface Props {
 const Shelf = ({ data }: Props): JSX.Element => (
   <StyledSection>
     <StyledTitle variant="h2">
-      <StarIcon />
+      <StyledIcon>{data.icon || 'star'}</StyledIcon>
       <Typography component="span" variant="h5">
         {data.title}
       </Typography>
@@ -29,6 +29,13 @@ const StyledSection = styled.section`
 const StyledTitle = styled(Typography)`
   display: flex;
   align-items: center;
+`;
+
+const StyledIcon = styled(Icon)`
+  &.material-icons {
+    margin-right: ${theme.spacing(0.5)}px;
+    font-size: 1.5rem;
+  }
 `;
 
 export default Shelf;
