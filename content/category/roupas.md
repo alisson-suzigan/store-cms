@@ -1,5 +1,5 @@
 ---
 layout: category
 title: Roupa adulto
-icon: cloats
+icon: sentiment_very_satisfied
 ---
