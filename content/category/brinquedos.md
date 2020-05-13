@@ -1,5 +1,5 @@
 ---
 layout: category
 title: Brinquedos
-icon: toy
+icon: sports_soccer
 ---
