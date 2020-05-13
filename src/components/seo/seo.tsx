@@ -39,6 +39,12 @@ function SEO({ title, description = '', lang = 'pt-br' }: Props): JSX.Element {
       }}
       title={title}
       titleTemplate={`%s | ${site.siteMetadata.title}`}
+      link={[
+        {
+          rel: 'stylesheet',
+          href: 'https://fonts.googleapis.com/icon?family=Material+Icons',
+        },
+      ]}
       meta={[
         {
           name: `description`,
