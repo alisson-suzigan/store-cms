@@ -34,7 +34,7 @@ const StyledTitle = styled(Typography)`
 const StyledIcon = styled(Icon)`
   &.material-icons {
     margin-right: ${theme.spacing(0.5)}px;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
   }
 `;
 
