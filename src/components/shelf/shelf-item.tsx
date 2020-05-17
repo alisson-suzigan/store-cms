@@ -43,7 +43,7 @@ const imageSize = 250;
 
 const StyledCard = styled(Card)`
   width: ${imageSize}px;
-  margin: ${theme.spacing(2)}px ${theme.spacing()}px;
+  margin: ${theme.spacing()}px;
 `;
 
 const StyledCardMedia = styled(CardMedia)`

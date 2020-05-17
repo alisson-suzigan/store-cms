@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import ShelfItem from './shelf-item';
 import { ShelfProduct } from './type';
+import theme from '../../theme';
 
 interface Props {
   data: ShelfProduct[];
@@ -18,7 +19,7 @@ const ShelfList = ({ data }: Props): JSX.Element => (
 const StyledShelfList = styled.ul`
   display: flex;
   margin: 0;
-  padding: 0;
+  padding: ${theme.spacing()}px;
   list-style: none;
   overflow-x: auto;
 `;
