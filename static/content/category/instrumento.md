@@ -1,5 +1,5 @@
 ---
 layout: category
-title: Instrumento
+title: Instrumentos
 icon: settings_input_component
 ---
