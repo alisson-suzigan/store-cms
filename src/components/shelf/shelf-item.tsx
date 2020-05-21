@@ -13,7 +13,7 @@ interface Props {
 }
 
 const ShelfItem = ({ data }: Props): JSX.Element => {
-  const { title, value, image } = data;
+  const { title, value, gallery } = data;
 
   const convertValueToCurrency = (value: number): string => {
     const [ints, cents = ''] = value.toString().split('.');
@@ -24,14 +24,10 @@ const ShelfItem = ({ data }: Props): JSX.Element => {
     <li>
       <StyledCard>
         <CardActionArea title={`${title}`}>
-          <StyledCardMedia image={image} title={title} />
+          <StyledCardMedia image={gallery[0]} title={title} />
           <StyledCardContent>
-            <Typography component="h3" variant="h6">
-              {title}
-            </Typography>
-            <Typography component="strong" variant="h6">
-              {value ? convertValueToCurrency(value) : 'Indefinido *'}
-            </Typography>
+            <StyledTitle variant="h3">{title}</StyledTitle>
+            <StyledPrice color="primary">{value ? convertValueToCurrency(value) : 'Indefinido *'}</StyledPrice>
           </StyledCardContent>
         </CardActionArea>
       </StyledCard>
@@ -52,6 +48,17 @@ const StyledCardMedia = styled(CardMedia)`
 
 const StyledCardContent = styled(CardContent)`
   height: 100px;
+`;
+
+const StyledTitle = styled(Typography)`
+  font-size: 1rem;
+  min-height: 38px;
+  line-height: 1.2;
+`;
+
+const StyledPrice = styled(Typography)`
+  font-size: 1.5rem;
+  font-weight: bold;
 `;
 
 export default ShelfItem;

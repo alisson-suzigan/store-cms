@@ -18,8 +18,8 @@ const ShelfList = ({ data }: Props): JSX.Element => (
 
 const StyledShelfList = styled.ul`
   display: flex;
-  margin: 0;
-  padding: ${theme.spacing()}px;
+  margin: 0 ${theme.spacing()}px;
+  padding: ${theme.spacing()}px 0;
   list-style: none;
   overflow-x: auto;
 `;

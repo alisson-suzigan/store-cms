@@ -62,7 +62,7 @@ export const query = graphql`
         }
       }
     }
-    products: allMarkdownRemark {
+    products: allMarkdownRemark(sort: { fields: [frontmatter___value, frontmatter___available], order: DESC }) {
       group(field: frontmatter___categories___category) {
         totalCount
         fieldValue
@@ -71,8 +71,7 @@ export const query = graphql`
           frontmatter {
             title
             value
-            image
-            date(formatString: "DD/MM/YYYY")
+            gallery
           }
         }
       }

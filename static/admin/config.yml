@@ -24,16 +24,17 @@ public_folder: '/images/uploads' # The src attribute for uploaded media will beg
 collections:
   - name: 'product' # Used in routes, e.g., /admin/collections/product
     label: 'Produto' # Used in the UI
-    folder: 'content/product' # The path to the folder where the documents are stored
+    folder: 'static/content/product' # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
     slug: '{{slug}}' # Filename template, e.g., title.md
     fields: # The fields for each document, usually in front matter
       - { label: 'Layout', name: 'layout', widget: 'hidden', default: 'product' }
       - { label: 'Nome', name: 'title', widget: 'string' }
-      - { label: 'Imagem', name: 'image', widget: 'image' }
+      - { label: 'Descrição', name: 'description', widget: 'markdown' }
       - { label: 'Valor', name: 'value', widget: 'number', valueType: 'float' }
       - { label: 'Disponível', name: 'available', widget: 'boolean', required: false, default: true }
-      - { label: 'Publicação', name: 'date', widget: 'datetime' }
+      - { label: 'Fotos', name: 'gallery', widget: 'list', field: { label: Imagem, name: image, widget: image } }
+
       - label: 'Categorias'
         name: 'categories'
         widget: 'list'
@@ -48,9 +49,7 @@ collections:
 
   - name: 'category'
     label: 'Categoria'
-    # editor:
-    #   preview: false
-    folder: 'content/category'
+    folder: 'static/content/category'
     slug: '{{slug}}'
     create: true # Allow users to create new documents in this collection
     fields: # The fields each document in this collection have

@@ -17,7 +17,7 @@ interface Product {
   frontmatter: {
     title: string;
     value: number;
-    image: string;
+    gallery: string[];
     date: string;
   };
 }
@@ -48,6 +48,6 @@ export interface ShelfProduct {
   id: string;
   title: string;
   value: number;
-  image: string;
+  gallery: string[];
   date: string;
 }
