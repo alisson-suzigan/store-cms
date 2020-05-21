@@ -16,7 +16,7 @@
     "start": "npm run develop",
     "build": "gatsby build",
     "clean": "gatsby clean",
-    "develop": "gatsby develop",
+    "develop": "gatsby develop -H 0.0.0.0",
     "serve": "gatsby serve",
     "format": "prettier --write \"**/*.{js,ts,tsx,json,md}\"",
     "lint": "tsc && eslint '*/**/*.{js,ts,tsx}' --fix",
