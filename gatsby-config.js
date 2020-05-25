@@ -28,9 +28,22 @@ module.exports = {
         path: `${__dirname}/static/content`,
       },
     },
-    `gatsby-transformer-remark`,
     `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
+    // `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-plugin-sharp`,
+      options: {
+        useMozJpeg: false,
+        stripMetadata: true,
+        defaultQuality: 75,
+      },
+    },
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [`gatsby-remark-relative-images`, `gatsby-remark-images`],
+      },
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
