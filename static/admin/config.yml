@@ -17,9 +17,9 @@ locale: 'pt-br'
 # Enabling Editorial Workflow: interface for drafting, reviewing, and approving posts
 # publish_mode: editorial_workflow
 
-# Media files will be stored in the repo under images/uploads
-media_folder: 'static/images/uploads' # Media files will be stored in the repo under static/images/uploads
-public_folder: '/images/uploads' # The src attribute for uploaded media will begin with /images/uploads
+# Media files will be stored in the repo under uploads
+media_folder: 'static/uploads' # Media files will be stored in the repo under static/uploads
+public_folder: '/uploads' # The src attribute for uploaded media will begin with /uploads
 
 collections:
   - name: 'product' # Used in routes, e.g., /admin/collections/product

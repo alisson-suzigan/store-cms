@@ -5,7 +5,7 @@ description: Capa de guitarra
 value: 50
 available: true
 gallery:
-  - /images/uploads/case-1.jpg
+  - /uploads/case-1.jpg
 categories:
   - category: Instrumentos
 ---

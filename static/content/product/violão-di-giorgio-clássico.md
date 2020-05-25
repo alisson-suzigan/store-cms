@@ -8,8 +8,8 @@ description: |-
 value: 100
 available: true
 gallery:
-  - /images/uploads/violao-1.jpg
-  - /images/uploads/violao-2.jpg
+  - /uploads/violao-1.jpg
+  - /uploads/violao-2.jpg
 categories:
   - category: Instrumentos
 ---

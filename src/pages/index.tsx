@@ -71,7 +71,13 @@ export const query = graphql`
           frontmatter {
             title
             value
-            gallery
+            gallery {
+              childImageSharp {
+                fixed(quality: 80, width: 250) {
+                  src
+                }
+              }
+            }
           }
         }
       }

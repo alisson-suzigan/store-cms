@@ -4,4 +4,9 @@
  * See: https://www.gatsbyjs.org/docs/node-apis/
  */
 
-// You can delete this file if you're not using it
+// Convert image src(s) in markdown to be relative to their node’s parent directory.
+const { fmImagesToRelative } = require('gatsby-remark-relative-images');
+
+exports.onCreateNode = ({ node }) => {
+  fmImagesToRelative(node);
+};

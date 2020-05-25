@@ -17,7 +17,7 @@ interface Product {
   frontmatter: {
     title: string;
     value: number;
-    gallery: string[];
+    gallery: Gallery;
     date: string;
   };
 }
@@ -48,6 +48,17 @@ export interface ShelfProduct {
   id: string;
   title: string;
   value: number;
-  gallery: string[];
+  gallery: Gallery;
   date: string;
+}
+
+// Gallery
+type Gallery = GalleryItem[];
+
+interface GalleryItem {
+  childImageSharp: {
+    fixed: {
+      src: string;
+    };
+  };
 }

@@ -11,10 +11,10 @@ description: |-
 value: 500
 available: true
 gallery:
-  - /images/uploads/guitarra-1.jpg
-  - /images/uploads/guitarra-2.jpg
-  - /images/uploads/guitarra-3.jpg
-  - /images/uploads/guitarra-4.jpg
+  - /uploads/guitarra-1.jpg
+  - /uploads/guitarra-2.jpg
+  - /uploads/guitarra-3.jpg
+  - /uploads/guitarra-4.jpg
 categories:
   - category: Instrumentos
 ---
