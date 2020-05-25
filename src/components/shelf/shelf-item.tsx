@@ -14,6 +14,7 @@ interface Props {
 
 const ShelfItem = ({ data }: Props): JSX.Element => {
   const { title, value, gallery } = data;
+  const image = gallery[0].childImageSharp.fixed.src;
 
   const convertValueToCurrency = (value: number): string => {
     const [ints, cents = ''] = value.toString().split('.');
@@ -24,7 +25,7 @@ const ShelfItem = ({ data }: Props): JSX.Element => {
     <li>
       <StyledCard>
         <CardActionArea title={`${title}`}>
-          <StyledCardMedia image={gallery[0]} title={title} />
+          <StyledCardMedia image={image} title={title} />
           <StyledCardContent>
             <StyledTitle variant="h3">{title}</StyledTitle>
             <StyledPrice color="primary">{value ? convertValueToCurrency(value) : 'Indefinido *'}</StyledPrice>
