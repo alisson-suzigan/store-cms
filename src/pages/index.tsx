@@ -1,5 +1,5 @@
 import React, { ReactNode } from 'react';
-import { Link, graphql } from 'gatsby';
+import { graphql } from 'gatsby';
 import SEO from '../components/seo';
 import Shelf from '../components/shelf/shelf';
 import { DataModel, ShelfData, Category, ProductGroup, ShelfProduct } from '../components/shelf/type';
@@ -21,6 +21,7 @@ const IndexPage = ({ data }: Props): JSX.Element => {
       if (category) {
         const shelfProducts: ShelfProduct[] = product.nodes.map(item => ({
           id: item.id,
+          slug: item.fields.slug,
           ...item.frontmatter,
         }));
 
@@ -44,7 +45,6 @@ const IndexPage = ({ data }: Props): JSX.Element => {
     <>
       <SEO title="Home" />
       {renderShelves()}
-      <Link to="/page-2/">Go to page 2</Link>
     </>
   );
 };
@@ -68,6 +68,9 @@ export const query = graphql`
         fieldValue
         nodes {
           id
+          fields {
+            slug
+          }
           frontmatter {
             title
             value
