@@ -3,7 +3,7 @@ layout: product
 title: Guitarra Ibanez RG-250
 description: |-
   * Marca: Ibanez Modelo: RG 250
-  * Cordas: 6
+  * Cordas: 6 
   * Trastes: 24
   * Ponte: Floyd Rose com micro afinação
   * Controles: 1 Volume + 1 Tone e chave de 5 posições
