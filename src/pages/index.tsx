@@ -75,6 +75,7 @@ export const query = graphql`
             title
             value
             gallery {
+              id
               childImageSharp {
                 fixed(quality: 80, width: 250) {
                   src
