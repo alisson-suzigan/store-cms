@@ -9,3 +9,4 @@ gallery:
 categories:
   - category: Instrumentos
 ---
+Suporte para gitarra
