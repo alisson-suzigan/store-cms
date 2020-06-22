@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'gatsby';
 import styled from 'styled-components';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
@@ -13,7 +14,7 @@ interface Props {
 }
 
 const ShelfItem = ({ data }: Props): JSX.Element => {
-  const { title, value, gallery } = data;
+  const { title, value, gallery, slug } = data;
   const image = gallery[0].childImageSharp.fixed.src;
 
   const convertValueToCurrency = (value: number): string => {
@@ -25,11 +26,13 @@ const ShelfItem = ({ data }: Props): JSX.Element => {
     <li>
       <StyledCard>
         <CardActionArea title={`${title}`}>
-          <StyledCardMedia image={image} title={title} />
-          <StyledCardContent>
-            <StyledTitle variant="h3">{title}</StyledTitle>
-            <StyledPrice color="primary">{value ? convertValueToCurrency(value) : 'Indefinido *'}</StyledPrice>
-          </StyledCardContent>
+          <StyledLink to={slug}>
+            <StyledCardMedia image={image} title={title} />
+            <StyledCardContent>
+              <StyledTitle variant="h3">{title}</StyledTitle>
+              <StyledPrice color="primary">{value ? convertValueToCurrency(value) : 'Indefinido *'}</StyledPrice>
+            </StyledCardContent>
+          </StyledLink>
         </CardActionArea>
       </StyledCard>
     </li>
@@ -45,6 +48,11 @@ const StyledCard = styled(Card)`
 
 const StyledCardMedia = styled(CardMedia)`
   height: ${imageSize}px;
+`;
+
+const StyledLink = styled(Link)`
+  color: inherit;
+  text-decoration: inherit;
 `;
 
 const StyledCardContent = styled(CardContent)`

@@ -8,17 +8,20 @@ export interface DataModel {
 export interface ProductGroup {
   totalCount: number;
   fieldValue: string;
-  nodes: Product[];
+  nodes: DataProduct[];
 }
 
-// Product
-interface Product {
+// DataProduct
+interface DataProduct {
   id: string;
   frontmatter: {
     title: string;
     value: number;
     gallery: Gallery;
     date: string;
+  };
+  fields: {
+    slug: string;
   };
 }
 
@@ -50,15 +53,30 @@ export interface ShelfProduct {
   value: number;
   gallery: Gallery;
   date: string;
+  slug: string;
 }
 
 // Gallery
-type Gallery = GalleryItem[];
+export type Gallery = GalleryItem[];
 
 interface GalleryItem {
+  id: string;
   childImageSharp: {
     fixed: {
       src: string;
     };
+  };
+}
+
+export interface SingleProduct {
+  markdownRemark: {
+    frontmatter: {
+      title: string;
+      description: string;
+      available: boolean;
+      value: number;
+      gallery: Gallery;
+    };
+    html: string;
   };
 }

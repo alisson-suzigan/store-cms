@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `Store CMS`,
+    title: `Tudo a venda`,
     description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
     author: `@alisson-suzigan`,
   },
@@ -27,22 +27,22 @@ module.exports = {
         path: `${__dirname}/static/content`,
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `product`,
+        path: `${__dirname}/static/content/product`,
+      },
+    },
     `gatsby-transformer-sharp`,
-    // `gatsby-plugin-sharp`,
-    {
-      resolve: `gatsby-plugin-sharp`,
-      options: {
-        useMozJpeg: false,
-        stripMetadata: true,
-        defaultQuality: 75,
-      },
-    },
-    {
-      resolve: `gatsby-transformer-remark`,
-      options: {
-        plugins: [`gatsby-remark-relative-images`, `gatsby-remark-images`],
-      },
-    },
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-remark`,
+    // {
+    //   resolve: `gatsby-transformer-remark`,
+    //   options: {
+    //     plugins: [`gatsby-remark-relative-images`, `gatsby-remark-images`],
+    //   },
+    // },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

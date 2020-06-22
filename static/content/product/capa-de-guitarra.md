@@ -1,7 +1,6 @@
 ---
 layout: product
 title: Capa de guitarra
-description: Capa de guitarra
 value: 50
 available: true
 gallery:
@@ -9,4 +8,5 @@ gallery:
 categories:
   - category: Instrumentos
 ---
+
 Capa de guitarra
