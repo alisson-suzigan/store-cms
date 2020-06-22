@@ -39,7 +39,7 @@ const Product = ({ data }: Props): JSX.Element => {
         <StyledPrice color="primary">{value && convertValueToMoney(value)}</StyledPrice>
         <StyledGallery>
           {/* <StyledAvailable>{available && 'Indisponível'}</StyledAvailable> */}
-          {renderGallery(gallery)}
+          {gallery && renderGallery(gallery)}
         </StyledGallery>
         <Typography variant="h6" component="strong">
           Descrição:
