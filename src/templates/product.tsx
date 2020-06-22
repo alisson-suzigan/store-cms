@@ -36,7 +36,7 @@ const Product = ({ data }: Props): JSX.Element => {
         <Typography component="h1" variant="h5">
           {title}
         </Typography>
-        <StyledPrice color="primary">{convertValueToMoney(value)}</StyledPrice>
+        <StyledPrice color="primary">{value && convertValueToMoney(value)}</StyledPrice>
         <StyledGallery>
           {/* <StyledAvailable>{available && 'Indisponível'}</StyledAvailable> */}
           {renderGallery(gallery)}
