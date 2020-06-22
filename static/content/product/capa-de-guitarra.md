@@ -9,3 +9,4 @@ gallery:
 categories:
   - category: Instrumentos
 ---
+Capa de guitarra

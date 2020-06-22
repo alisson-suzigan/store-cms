@@ -13,3 +13,6 @@ gallery:
 categories:
   - category: Instrumentos
 ---
+* Marca: Di Giorgio
+* Cordas em Nylon
+* Cor: Natural
